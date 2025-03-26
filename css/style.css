@@ -17,6 +17,10 @@ body {
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
 
 .container {
@@ -33,7 +37,7 @@ body {
     }
     
     .container {
-        margin: 0 auto;
+        margin-top: 8vh;
         width: 400px;
         box-shadow: 5px 5px 5px var(--dark-grey);
         border-radius: 20px;

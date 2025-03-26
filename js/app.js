@@ -11,9 +11,9 @@ let data = {
 }
 
 
-function showName(){
-    data.file = this.files[0];
-    const fileName = this.files[0].name;
+function showName(e){
+    data.file = e.target.files[0];
+    const fileName = e.target.files[0].name;
     const $spanFileName = $fileName.querySelector('span');
     
     if(fileName){
@@ -26,34 +26,27 @@ function showName(){
 function validationForm(e){
     e.preventDefault();
 
-    data.name = document.querySelector('#name').value;
+    data.name = document.querySelector('#name').value.trim();
 
     if(!data.file || data.name === ''){
         showAlert('Debe completar todos los pasos', 'error');
     }else{
-        showAlert('VOS TRANQUILO AMIGUITO, ESTAMOS PROCESANDO TODO')
+        showAlert('VOS TRANQUILO AMIGUITO, ESTAMOS PROCESANDO TODO', 'correct')
     }
 }
 
 
 function showAlert(msg, type){
     const alertExist = document.querySelector('.alert');
-    const $alert = document.createElement('P');
 
     if(!alertExist){
-        $alert.classList.add('alert')
+        const $alert = document.createElement('P');
+        $alert.classList.add('alert', type)
         $alert.textContent = msg;
-
-         if(type === 'error'){
-            $alert.classList.add('error')
-         }else{
-            $alert.classList.add('correct')
-         }
-
         $form.insertBefore($alert, $form.querySelector("button[type='submit']"))
 
         setTimeout(() => {
             $alert.remove();
-        }, 3000);
+        }, 5000);
     }
 }
