@@ -43,10 +43,17 @@ function showAlert(msg, type){
     if(!alertExist){
         $alert.classList.add('alert')
         $alert.textContent = msg;
-        $form.appendChild($alert)
+
+         if(type === 'error'){
+            $alert.classList.add('error')
+         }else{
+            $alert.classList.add('correct')
+         }
+
+        $form.insertBefore($alert, $form.querySelector("button[type='submit']"))
+
+        setTimeout(() => {
+            $alert.remove();
+        }, 3000);
     }
-    
-    setTimeout(() => {
-        $alert.remove();
-    }, 3000);
 }
