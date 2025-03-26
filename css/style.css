@@ -15,7 +15,7 @@ img {
 
 body {
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     background-color: var(--white);
 }
 
@@ -52,20 +52,24 @@ body {
     font-size: 20px;
 }
 
+.header {
+    margin-bottom: 50px;
+}
+
 h2 {
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 0;
     font-weight: 900;
 }
 
 p {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .button {
     border: none;
-    font-size: 16px;
+    font-size: 20px;
     color: var(--white);
     font-weight: 700;
     background-color: var(--light-blue);
@@ -90,7 +94,7 @@ p {
 }
  
 .step {
-    margin-top: 35px;
+    margin-top: 45px;
 } 
 
 #file-name {
@@ -105,6 +109,16 @@ p {
 .alert {
     text-align: center;
     margin-top: 10px;
-    color: red;
+    color: var(--white);
     font-weight: bold;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.error {
+    background-color: rgb(195, 32, 32);
+}
+
+.correct {
+    background-color: rgb(22, 145, 22);
 }
